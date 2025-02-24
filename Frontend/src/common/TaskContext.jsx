@@ -20,6 +20,7 @@ export const TaskProvider = ({ children }) => {
 
   const fetchTaskCounts = async () => {
     try {
+      const token = userInfo?.token;
       if (!token) {
         toast.error("No token found!");
         return;
@@ -43,10 +44,11 @@ export const TaskProvider = ({ children }) => {
 
   useEffect(() => {
     fetchTaskCounts();
-  }, []);
+  }, [token]);
 
   const fetchTasks = async () => {
     try {
+      const token = userInfo?.token;
       if (!token) {
         toast.error("No token found");
         return;
@@ -73,6 +75,7 @@ export const TaskProvider = ({ children }) => {
 
   const updateTask = async (listId, taskId, updatedFields) => {
     try {
+      const token = userInfo?.token;
       if (!token) {
         toast.error("Authentication token missing");
         return;
@@ -106,6 +109,7 @@ export const TaskProvider = ({ children }) => {
 
   const updateListName = async (listId, newName) => {
     try {
+      const token = userInfo?.token;
       if (!token) {
         toast.error("Authentication token missing");
         return;
@@ -130,6 +134,7 @@ export const TaskProvider = ({ children }) => {
 
   const deleteList = async (listId) => {
     try {
+      const token = userInfo?.token;
       if (!token) {
         toast.error("Authentication token missing");
         return;

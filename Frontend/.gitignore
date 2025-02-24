@@ -23,12 +23,12 @@ dist-ssr
 *.sln
 *.sw?
 
-# Dependencies
-Frontend/node_modules
+# Node modules
+node_modules/
+Frontend/node_modules/
 Backend/node_modules/
 
-# Local environment variables
-Frontend/.env
+# Environment files
+.env
+
 Backend/.env
-.env.local
-.env.*.local
