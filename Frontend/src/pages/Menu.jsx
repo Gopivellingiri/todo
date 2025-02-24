@@ -9,6 +9,7 @@ import { API_BASE_URL, API_TASK_URL } from "../../Api";
 import { toast } from "react-toastify";
 import { useTaskContext } from "../common/TaskContext";
 import Modal from "../components/Modal";
+import { useNavigate } from "react-router-dom";
 
 const Menu = () => {
   const { lists, setLists } = useTaskContext();
@@ -19,6 +20,7 @@ const Menu = () => {
   const [selectedFile, setSelectedFile] = useState(null);
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [listName, setListName] = useState("");
+  const navigate = useNavigate();
 
   const token = userInfo.token || "";
 
@@ -89,7 +91,7 @@ const Menu = () => {
     localStorage.removeItem("userInfo"); // Remove user data
     toast.success("Signed out successfully!");
     setTimeout(() => {
-      window.location.href = "/sign-in"; // Redirect to login page
+      navigate("/sign-in");
     }, 1000);
   };
 
