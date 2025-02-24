@@ -20,7 +20,7 @@ app.use(
     credentials: true,
     origin: [
       "http://localhost:5173",
-      "https://todo-mernstack-reactjs.netlify.app/sign-in",
+      "https://todo-mernstack-reactjs.netlify.app",
     ],
   })
 );

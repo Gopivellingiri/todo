@@ -25,10 +25,9 @@ dist-ssr
 
 # Dependencies
 Frontend/node_modules
-backend/node_modules
+Backend/node_modules/
 
 # Local environment variables
-.env
 Frontend/.env
 Backend/.env
 .env.local
